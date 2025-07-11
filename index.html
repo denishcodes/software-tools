@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎥 Simple Video Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="editor-container">
+    <h1>🎬 Simple Video & Photo Editor</h1>
+
+    <!-- media inputs -->
+    <input type="file" id="videoUpload"  accept="video/*" />
+    <input type="file" id="photoUpload"  accept="image/*" />
+    <input type="file" id="bgMusicUpload" accept="audio/*" />
+
+    <!-- viewers -->
+    <video id="videoPlayer" controls></video>
+    <img   id="photoPreview" style="display:none;" />
+
+    <!-- controls -->
+    <div class="controls">
+      <button id="playPauseBtn">▶ Play</button>
+
+      <input  type="number" id="startTime" placeholder="Start (s)" />
+      <input  type="number" id="endTime"   placeholder="End (s)" />
+      <button id="trimBtn">✂ Trim</button>
+
+      <input  type="text" id="overlayText" placeholder="Overlay Text" />
+      <select id="textPosition">
+        <option value="top">Top</option>
+        <option value="middle">Middle</option>
+        <option value="bottom">Bottom</option>
+      </select>
+      <button id="addTextBtn">📝 Add</button>
+      <button id="removeOverlayBtn">❌ Remove Text</button>
+
+      <button id="screenshotBtn">📸 Screenshot</button>
+      <button id="exportBtn">📤 Export Trim</button>
+      <button id="resetBtn">🔄 Reset</button>
+    </div>
+
+    <!-- simple status read-out -->
+    <div class="dashboard">
+      <strong>Status:</strong> <span id="status">Ready</span>
+    </div>
+
+    <!-- where overlay text sits -->
+    <div id="overlayContainer"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
